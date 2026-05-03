@@ -127,6 +127,22 @@ Set these GitHub repository secrets before running it:
 `CHROME_WEB_STORE_CLIENT_SECRET`
 `CHROME_WEB_STORE_REFRESH_TOKEN`
 
+How to get them:
+
+`CHROME_WEB_STORE_EXTENSION_ID`: Open the Chrome Web Store Developer Dashboard, create or open your item, and copy the extension ID from the item URL or dashboard details.
+
+`CHROME_WEB_STORE_CLIENT_ID` and `CHROME_WEB_STORE_CLIENT_SECRET`: Create an OAuth 2.0 client in Google Cloud Console for a Web application. Enable the Chrome Web Store API for that Google Cloud project, then copy the client ID and client secret from the OAuth client details.
+
+`CHROME_WEB_STORE_REFRESH_TOKEN`: Use the same Google account that owns the Web Store item to complete an OAuth consent flow with the `chromewebstore` scope, then exchange the authorization code for a refresh token. A common shortcut is Google OAuth Playground or any OAuth code flow tool that can request offline access.
+
+Add them in GitHub:
+
+1. Open the repository on GitHub.
+2. Go to `Settings` -> `Secrets and variables` -> `Actions`.
+3. Click `New repository secret`.
+4. Add each secret name and value exactly as above.
+5. Save all four secrets, then run the workflow again.
+
 To deploy, either push a tag that starts with `v` such as `v1.0.1`, or run the workflow manually from the GitHub Actions tab. The workflow zips the runtime extension files and runs `chrome-webstore-upload` with the configured OAuth credentials.
 
 If you want trusted-tester publishing instead of public publishing, change the upload step to use the CLI's `publish` command and pass the `--trusted-testers` flag.
