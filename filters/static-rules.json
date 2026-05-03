@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||doubleclick.net^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 2,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googleadservices.com^",
+      "resourceTypes": ["script","image","xmlhttprequest"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 3,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googlesyndication.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 4,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adnxs.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 5,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||amazon-adsystem.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 6,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||outbrain.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 7,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||taboola.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 8,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||moatads.com^",
+      "resourceTypes": ["script","image","xmlhttprequest"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 9,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||scorecardresearch.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","ping"],
+      "isUrlFilterCaseSensitive": false
+    }
+  },
+  {
+    "id": 10,
+    "priority": 10,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||criteo.com^",
+      "resourceTypes": ["script","image","xmlhttprequest","sub_frame"],
+      "isUrlFilterCaseSensitive": false
+    }
+  }
+]

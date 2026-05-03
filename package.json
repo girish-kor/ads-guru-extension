@@ -1,0 +1,23 @@
+{
+  "name": "ads-guru-extension",
+  "version": "1.0.0",
+  "description": "MV3 ad-blocking extension",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules tests/run-all.js",
+    "test:dsa": "node --experimental-vm-modules tests/dsa.test.js",
+    "test:parser": "node --experimental-vm-modules tests/filter-parser.test.js",
+    "test:rules": "node --experimental-vm-modules tests/rule-validation.test.js",
+    "test:perf": "node --experimental-vm-modules tests/performance.test.js",
+    "test:sim": "node --experimental-vm-modules tests/browsing-simulation.test.js",
+    "lint": "eslint --ext .js .",
+    "validate": "node -e \"import('./manifest.json',{with:{type:'json'}}).then(m=>console.log('manifest OK:',m.default.name))\"",
+    "build": "npm run validate && npm run lint && npm test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.3.0"
+  }
+}

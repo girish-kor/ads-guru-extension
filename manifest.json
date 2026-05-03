@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Ads Guru — Advanced Ads Blocker",
+  "short_name": "AdsGuru",
+  "version": "1.0.0",
+  "description": " Ads blocker using EasyList, EasyPrivacy, uBlock filters. Trie, Aho-Corasick, Bloom Filter, LRU Cache.",
+  "author": "ads-guru",
+
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback",
+    "storage",
+    "alarms",
+    "scripting",
+    "webNavigation",
+    "tabs"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content-script.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "static_rules",
+        "enabled": true,
+        "path": "filters/static-rules.json"
+      }
+    ]
+  },
+
+  "action": {
+    "default_title": "Ads Guru"
+  },
+
+  "icons": {},
+
+  "web_accessible_resources": [
+    {
+      "resources": ["core/cosmetic-inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

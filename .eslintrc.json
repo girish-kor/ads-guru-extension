@@ -1,0 +1,13 @@
+{
+  "env": { "browser": true, "es2022": true, "serviceworker": true },
+  "parserOptions": { "ecmaVersion": 2022, "sourceType": "module" },
+  "rules": {
+    "no-var": "error",
+    "prefer-const": "warn",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "eqeqeq": ["error", "always"],
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "off"
+  }
+}

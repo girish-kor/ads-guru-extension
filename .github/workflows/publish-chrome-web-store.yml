@@ -1,0 +1,35 @@
+name: Publish Chrome Web Store
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    env:
+      EXTENSION_ID: ${{ secrets.CHROME_WEB_STORE_EXTENSION_ID }}
+      CLIENT_ID: ${{ secrets.CHROME_WEB_STORE_CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CHROME_WEB_STORE_CLIENT_SECRET }}
+      REFRESH_TOKEN: ${{ secrets.CHROME_WEB_STORE_REFRESH_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Create extension package
+        run: zip -r ads-guru-extension.zip manifest.json background content core dsa filters util
+
+      - name: Upload and publish to Chrome Web Store
+        run: npx --yes chrome-webstore-upload --source ads-guru-extension.zip
